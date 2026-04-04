@@ -1,5 +1,3 @@
-// src/components/ProjectsSection.jsx
-import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ExternalLink, Code, CheckCircle } from "lucide-react";
 
@@ -8,7 +6,6 @@ import mustproductmarket from "@/assets/projects/mustproductmarket.png";
 import adviceApp from "@/assets/projects/adviceApp.png";
 import currencyConverter from "@/assets/projects/currencyConverter.png";
 import dreamscapejourney from "@/assets/projects/dreamscapejourney.png";
-import jobs from "@/assets/projects/jobs.png";
 import airmust from "@/assets/projects/airmust.png";
 import devjobs from "@/assets/projects/devjobs.png";
 import fuji from "@/assets/projects/fuji.png";
@@ -89,30 +86,6 @@ const projects = [
 ];
 
 export const ProjectsSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    // Only run auto-scroll on desktop (min-width: 768px)
-    if (window.matchMedia("(max-width: 767px)").matches) return;
-    if (!scrollRef.current || isHovered) return;
-
-    let frameId;
-    let pos = scrollRef.current.scrollLeft;
-
-    const loop = () => {
-      if (!isHovered && scrollRef.current) {
-        pos += 0.5;
-        const max = scrollRef.current.scrollWidth / 2;
-        scrollRef.current.scrollLeft = pos >= max ? 0 : pos;
-        frameId = requestAnimationFrame(loop);
-      }
-    };
-
-    frameId = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(frameId);
-  }, [isHovered]);
-
   return (
     <section id="projects" className="py-24 px-4">
       <div className="container mx-auto max-w-7xl">
@@ -124,12 +97,8 @@ export const ProjectsSection = () => {
           results for businesses like yours.
         </p>
 
-        <div
-          className="mb-12 overflow-hidden py-4"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <div ref={scrollRef} className="flex gap-8 scroll-container py-2">
+        <div className="mb-12 overflow-hidden py-4">
+          <div className="flex gap-8 scroll-container py-2">
             {projects.map((project, idx) => {
               // If demo is truthy use external link, otherwise point to our placeholder route
               const hasDemo = Boolean(project.demo);
