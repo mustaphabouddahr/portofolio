@@ -1,13 +1,12 @@
 // src/pages/Home.jsx
 import { StarBackground } from "@/components/StarBackground";
-import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
-import { PhotographySection } from "@/components/PhotographySection"; // Import the new section
+import { PhotographySection } from "@/components/PhotographySection";
 import { ContactSection } from "@/components/ContactSection";
-import { Footer } from "@/components/Footer";
+import { GitHubStatus } from "../components/GitHubStatus";
 
 export const Home = () => {
   return (
@@ -15,9 +14,10 @@ export const Home = () => {
       <StarBackground />
       <HeroSection />
       <AboutSection />
-      <SkillsSection />
+      <GitHubStatus />
       <ProjectsSection />
-      <PhotographySection /> {/* Add the new photography section */}
+      <SkillsSection />
+      <PhotographySection />
       <ContactSection />
     </div>
   );

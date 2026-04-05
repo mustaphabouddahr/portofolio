@@ -39,7 +39,7 @@ const contacts = [
   },
   {
     name: "GitHub",
-    href: "https://github.com/Must01",
+    href: "https://github.com/mustaphabouddahr",
     icon: Github,
     description: "Code repositories & projects",
   },
@@ -128,13 +128,13 @@ const ContactCard = ({ contact, className = "" }) => {
 export const ContactSection = () => {
   const primaryContacts = contacts.filter((contact) => contact.isPrimary);
   const socialContacts = contacts.filter((contact) =>
-    ["LinkedIn", "GitHub", "Instagram"].includes(contact.name)
+    ["LinkedIn", "GitHub", "Instagram"].includes(contact.name),
   );
   const freelanceContacts = contacts.filter((contact) =>
-    ["Fiverr", "Upwork", "Freelancer"].includes(contact.name)
+    ["Fiverr", "Upwork", "Freelancer"].includes(contact.name),
   );
   const supportContacts = contacts.filter((contact) =>
-    ["Ko‑fi", "PayPal", "Linktree"].includes(contact.name)
+    ["Ko‑fi", "PayPal", "Linktree"].includes(contact.name),
   );
 
   return (

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { ArrowDown, GitBranch, Users } from "lucide-react";
-import profilePic from "@/assets/profile.jpg";
+import profilePic from "@/assets/profile.webp";
 
 export const HeroSection = () => {
   const [repoCount, setRepoCount] = useState(0);
   const [followerCount, setFollowerCount] = useState(0);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/Must01")
+    fetch("https://api.github.com/users/mustaphabouddahr")
       .then((res) => res.json())
       .then((user) => {
         setRepoCount(user.public_repos || 0);
@@ -34,8 +34,8 @@ export const HeroSection = () => {
             <span className="block text-primary">Mustapha Bouddahr</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto md:mx-0">
-            Full-Stack Developer | Laravel & React | I build interactive and
-            scalable web apps.
+            Full-Stack Developer <br /> I build things that solve real problems
+            and ship to production.
           </p>
           <div className="flex flex-wrap justify-center md:justify-start items-center gap-4">
             <div className="flex items-center space-x-2 bg-card/50 px-4 py-2 rounded-full">
@@ -53,9 +53,19 @@ export const HeroSection = () => {
               </div>
             )}
           </div>
-          <div className="mt-6 flex justify-center md:justify-start">
-            <a href="#projects" className="cosmic-button inline-block">
-              View My Work
+          <div className="mt-6 flex flex-col sm:flex-row gap-2 justify-center md:justify-start">
+            <a
+              href="/resume.pdf"
+              download={"mustapha_bouddahr_resume.pdf"}
+              className="cosmic-button inline-block"
+            >
+              Resume - Fr
+            </a>
+            <a
+              href="#projects"
+              className="px-6 py-3 rounded-xl text-sm font-medium glass text-foreground hover:bg-card/80 "
+            >
+              My Projects
             </a>
           </div>
         </div>
@@ -66,7 +76,7 @@ export const HeroSection = () => {
             <img
               src={profilePic}
               alt="Mustapha Bouddahr"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full scale-x-[-1] "
             />
           </div>
         </div>

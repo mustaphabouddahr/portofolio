@@ -14,90 +14,77 @@ import picture9 from "@/assets/photography/picture9.webp";
 import picture10 from "@/assets/photography/picture10.webp";
 import picture11 from "@/assets/photography/picture11.webp";
 
-// Replace these placeholder URLs with your actual Instagram photo URLs
 const photos = [
   {
     id: 0,
     src: picture0,
     alt: "",
-    likes: 9,
     category: "cats",
   },
   {
     id: 1,
     src: picture1,
     alt: "",
-    likes: 9,
     category: "cats",
   },
   {
     id: 2,
     src: picture2,
     alt: "",
-    likes: 7,
     category: "nature",
   },
   {
     id: 3,
     src: picture3,
     alt: "",
-    likes: 10,
     category: "cats",
   },
   {
     id: 4,
     src: picture4,
     alt: "",
-    likes: 10,
     category: "cats",
   },
   {
     id: 5,
     src: picture5,
     alt: "",
-    likes: 4,
     category: "nature",
   },
   {
     id: 6,
     src: picture6,
     alt: "",
-    likes: 11,
     category: "cats",
   },
   {
     id: 7,
     src: picture7,
     alt: "",
-    likes: 10,
     category: "sky",
   },
   {
     id: 8,
     src: picture8,
     alt: "",
-    likes: 13,
     category: "cats",
   },
   {
     id: 9,
     src: picture9,
     alt: "",
-    likes: 10,
     category: "cats",
   },
   {
     id: 10,
     src: picture10,
     alt: "",
-    likes: 7,
     category: "cats",
   },
   {
     id: 11,
     src: picture11,
     alt: "",
-    likes: 9,
     category: "cats",
   },
 ];
@@ -204,12 +191,6 @@ export const PhotographySection = () => {
               <Eye className="w-4 h-4" />
               <span>{photos.length} Photos</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Heart className="w-4 h-4" />
-              <span>
-                {photos.reduce((sum, photo) => sum + photo.likes, 0)} Likes
-              </span>
-            </div>
           </div>
         </div>
 
@@ -244,7 +225,7 @@ export const PhotographySection = () => {
           <div ref={scrollRef} className="flex gap-6 scroll-container py-2">
             {photos.map((photo, index) => (
               <div
-                key={photo.id}
+                key={index}
                 className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer flex-shrink-0"
                 style={{ width: "300px", height: "300px" }}
                 onMouseEnter={() => setHoveredPhoto(photo.id)}
@@ -273,7 +254,6 @@ export const PhotographySection = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 text-white/80">
                         <Heart className="w-4 h-4" />
-                        <span className="text-sm">{photo.likes}</span>
                       </div>
                       <div className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs">
                         {photo.category}
@@ -329,7 +309,6 @@ export const PhotographySection = () => {
                 <div className="flex items-center justify-center gap-4 text-white/80">
                   <div className="flex items-center gap-2">
                     <Heart className="w-5 h-5" />
-                    <span>{selectedPhoto.likes} likes</span>
                   </div>
                   <div className="px-3 py-1 bg-white/10 rounded-full">
                     {selectedPhoto.category}

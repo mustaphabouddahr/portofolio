@@ -10,7 +10,7 @@ import {
 
 const socials = [
   {
-    href: "https://github.com/Must01",
+    href: "https://github.com/mustaphabouddahr",
     icon: Github,
     label: "GitHub",
   },

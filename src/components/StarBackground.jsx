@@ -7,7 +7,7 @@ export const StarBackground = () => {
 
   useEffect(() => {
     const checkTheme = () => {
-      setIsDarkMode(document.documentElement.classList.contains("light"));
+      setIsDarkMode(document.documentElement.classList.contains("dark"));
     };
 
     checkTheme();
@@ -36,7 +36,7 @@ export const StarBackground = () => {
 
   const generateStars = () => {
     const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 8000
+      (window.innerWidth * window.innerHeight) / 8000,
     );
 
     const newStars = [];
@@ -233,13 +233,13 @@ export const StarBackground = () => {
                   ? i % 3 === 0
                     ? "#10b981"
                     : i % 3 === 1
-                    ? "#3b82f6"
-                    : "rgba(255, 255, 255, 0.2)"
+                      ? "#3b82f6"
+                      : "rgba(255, 255, 255, 0.2)"
                   : i % 3 === 0
-                  ? "#059669"
-                  : i % 3 === 1
-                  ? "#2563eb"
-                  : "rgba(31, 41, 55, 0.3)",
+                    ? "#059669"
+                    : i % 3 === 1
+                      ? "#2563eb"
+                      : "rgba(31, 41, 55, 0.3)",
                 animationDelay: i * 0.8 + "s",
                 animationDuration: 5 + i * 0.5 + "s",
                 opacity: 0.3,
@@ -247,7 +247,7 @@ export const StarBackground = () => {
             >
               {symbol}
             </div>
-          )
+          ),
         )}
       </div>
     </div>

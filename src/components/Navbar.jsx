@@ -43,7 +43,7 @@ export const Navbar = () => {
           "fixed top-0 w-full z-40 transition-all duration-300",
           isScrolled
             ? "py-2 bg-background/80 backdrop-blur-lg shadow-sm border-b border-border"
-            : "py-4"
+            : "py-4",
         )}
       >
         <div className="container flex items-center justify-between">
@@ -64,7 +64,7 @@ export const Navbar = () => {
                   "relative text-sm font-medium transition-colors duration-300",
                   activeSection === item.href
                     ? "text-primary"
-                    : "text-foreground/80 hover:text-primary"
+                    : "text-foreground/80 hover:text-primary",
                 )}
               >
                 {item.name}
@@ -95,7 +95,7 @@ export const Navbar = () => {
           "fixed inset-0 bg-background/95 backdrop-blur-md z-50 flex flex-col items-center justify-center md:hidden transition-opacity duration-300",
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+            : "opacity-0 pointer-events-none",
         )}
       >
         <button
@@ -115,7 +115,7 @@ export const Navbar = () => {
               "relative mb-6 text-2xl font-medium transition-colors duration-300",
               activeSection === item.href
                 ? "text-primary"
-                : "text-foreground/90 hover:text-primary"
+                : "text-foreground/90 hover:text-primary",
             )}
           >
             {item.name}

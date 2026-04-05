@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Home } from "./pages/Home";
 import { DemoPlaceholder } from "./pages/DemoPlaceholder";
 import { NotFound } from "./pages/NotFound";
+import { DemoSourceCode } from "./pages/DemoSourceCode";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="demo/:project" element={<DemoPlaceholder />} />
+        <Route path="code/:project" element={<DemoSourceCode />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

@@ -1,47 +1,10 @@
 import { useState, useEffect } from "react";
 
-import express from "@/assets/icons/express.png";
-
 const skills = [
-  {
-    name: "JavaScript",
-    category: "frontend",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
-  },
   {
     name: "React",
     category: "frontend",
     icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
-  },
-  {
-    name: "HTML5",
-    category: "frontend",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
-  },
-  {
-    name: "CSS3",
-    category: "frontend",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
-  },
-  {
-    name: "Tailwind CSS",
-    category: "frontend",
-    icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
-  },
-  {
-    name: "Bootstrap",
-    category: "frontend",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-  },
-  {
-    name: "Vite",
-    category: "frontend",
-    icon: "https://www.vectorlogo.zone/logos/vitejsdev/vitejsdev-icon.svg",
-  },
-  {
-    name: "PHP",
-    category: "backend",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg",
   },
   {
     name: "Laravel",
@@ -49,24 +12,55 @@ const skills = [
     icon: "https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/Laravel-Light.svg",
   },
   {
+    name: "Angular",
+    category: "frontend",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
+  },
+  {
+    name: "Spring Boot",
+    category: "backend",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+  },
+  {
+    name: "TypeScript",
+    category: "frontend",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
+  },
+
+  {
+    name: "Tailwind CSS",
+    category: "frontend",
+    icon: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+  },
+  {
+    name: "PHP",
+    category: "backend",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg",
+  },
+  {
+    name: "Java",
+    category: "backend",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+  },
+  {
     name: "Node.js",
     category: "backend",
     icon: "https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/NodeJS-Dark.svg",
   },
   {
-    name: "Express.js",
+    name: "Python",
     category: "backend",
-    icon: express,
-  },
-  {
-    name: "REST API",
-    category: "backend",
-    icon: "https://cdn-icons-png.flaticon.com/512/2164/2164832.png",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
   },
   {
     name: "MySQL",
     category: "database",
     icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg",
+  },
+  {
+    name: "PostgreSQL",
+    category: "database",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
   },
   {
     name: "MongoDB",
@@ -79,19 +73,34 @@ const skills = [
     icon: "https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg",
   },
   {
-    name: "VS Code",
-    category: "tools",
-    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg",
+    name: "Docker",
+    category: "devops",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+  },
+  {
+    name: "AWS",
+    category: "devops",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+  },
+  {
+    name: "GitHub Actions",
+    category: "devops",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
   },
   {
     name: "Git",
-    category: "tools",
+    category: "devops",
     icon: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
   },
   {
     name: "GitHub",
-    category: "tools",
+    category: "devops",
     icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg",
+  },
+  {
+    name: "VS Code",
+    category: "tools",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg",
   },
   {
     name: "Figma",
@@ -99,19 +108,9 @@ const skills = [
     icon: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
   },
   {
-    name: "Photoshop",
+    name: "Postman",
     category: "tools",
-    icon: "https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/Photoshop.svg",
-  },
-  {
-    name: "XAMPP",
-    category: "tools",
-    icon: "https://www.vectorlogo.zone/logos/apache/apache-icon.svg",
-  },
-  {
-    name: "phpMyAdmin",
-    category: "tools",
-    icon: "https://raw.githubusercontent.com/loganmarchione/homelab-svg-assets/400154aeeb699182b6a681097a89a9999efd326c/assets/phpmyadmin.svg",
+    icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
   },
   {
     name: "TablePlus",
@@ -119,9 +118,24 @@ const skills = [
     icon: "https://avatars.githubusercontent.com/u/29408238?s=200&v=4",
   },
   {
-    name: "Postman",
+    name: "Photoshop",
     category: "tools",
-    icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+    icon: "https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/Photoshop.svg",
+  },
+  {
+    name: "JavaScript",
+    category: "frontend",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "HTML5",
+    category: "frontend",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS3",
+    category: "frontend",
+    icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
   },
 ];
 
@@ -130,6 +144,7 @@ const categories = [
   { key: "frontend", label: "Frontend" },
   { key: "backend", label: "Backend" },
   { key: "database", label: "Database" },
+  { key: "devops", label: "DevOps" },
   { key: "tools", label: "Tools" },
 ];
 
@@ -159,7 +174,7 @@ export const SkillsSection = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     const section = document.getElementById("skills");
