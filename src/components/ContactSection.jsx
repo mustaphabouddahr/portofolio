@@ -229,13 +229,16 @@ export const ContactSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a
                 href="mailto:mustaphabouddahr347@gmail.com"
+                target="_blank"
                 className="flex items-center justify-center space-x-3 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 <Mail className="w-5 h-5" />
+
                 <span>Send Email</span>
               </a>
               <a
                 href="https://wa.me/212600123456"
+                target="_blank"
                 className="flex items-center justify-center space-x-3 bg-green-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-600 transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 <MessageCircle className="w-5 h-5" />
